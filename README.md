@@ -1,6 +1,6 @@
 # IS2 ETF DATA WAREHOUSE DESIGN
 
-- The complete assignment you can check in the 13M111IS2_domaci_22_23 file.
+- Complete assignment you can check in the 13M111IS2_domaci_22_23 file.
 
 - Tech stack requirements
     * MySQL Server
