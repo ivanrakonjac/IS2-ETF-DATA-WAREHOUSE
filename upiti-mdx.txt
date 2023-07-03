@@ -1,0 +1,29 @@
+1) Iznos prodatih artikala za svaku kategoriju artikla, za svaku godinu:
+SELECT [Kategorija].[Naziv].Members ON ROWS,
+       [Vreme].[Godina].Members ON COLUMNS,
+       [Measures].[Iznos] ON PAGES
+FROM [Prodaje]
+
+2) Broj prodatih artikala za svako mesto prodavca:
+SELECT [MestoProdavca].[Mesto].Members ON ROWS,
+       [Measures].[Kolicina] ON COLUMNS
+FROM [Prodaje]
+
+3) Broj ostavljenih recenzija za svaki mesec:
+SELECT [Vreme].[Mesec].Members ON ROWS,
+       [Measures].[Fact Count] ON COLUMNS
+FROM [Recenzije]
+
+4) Prosečna ocena za svaku kategoriju, za svako mesto prodavca:
+SELECT [Kategorija].[Naziv].Members ON ROWS,
+       [MestoProdavca].[Mesto].Members ON COLUMNS,
+       [Measures].[Ocena] ON PAGES
+FROM [Recenzije]
+
+
+5) Maksimalnu i minimalnu ocenu za svakog prodavca
+SELECT {[Prodavac].[Prezime].Members}  ON COLUMNS,
+{[Measures].[Maksimalna Ocena], [Measures].[Minimalna Ocena]} on ROWS
+FROM [Recenzije]
+
+
